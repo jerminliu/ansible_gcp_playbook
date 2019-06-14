@@ -1,0 +1,4 @@
+nginx_port_number: 80
+nginx_proxy_pass: http://127.0.0.1:8080
+basic_auth_cred_path: /etc/nginx/.htpasswd
+jenkins_host: 127.0.0.1

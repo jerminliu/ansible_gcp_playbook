@@ -1,0 +1,6 @@
+gcp_project: sharp-theory-241513
+gcp_cred_kind: serviceaccount
+gcp_cred_file: /mnt/c/ansible/google_cloud/sharp-theory-241513-82c44676cb0d.json
+zone: "us-central1-a"
+region: "us-central1"
+rsa_pub_key: ubuntu:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzvFkcXLlHV7FM9FJ0zDtrb7IHj2h8aEMqFKOqedq6PXAi08CTnIw5Heo50jFKHD2bXGzFc3/Qi5uA0216p0LCS/AyzPsDVdOGCtR77mHsumqQ6dcu3S0H2dZlrV1a0NsQiH6FMhMTxHcX1RTNm4xloJb0TVp3t2NGZDDgFtaGdn7UeIO49+LM9d6SdEXVgFQMO68TVmjhwguVl+jHH+6MnQWW3l/0zGYxwWCCtqlX2DrbjcS5UNWmLCK9pWQBwKGnL5/oJgHqWKypxILSC/UDHKLu0Q5+Xmpy+n88MsFYeHfyywlVGjwKyjMp2ITtYacdwwSXGHcedgtosSsee89B ubuntu@EPUAVINW0343

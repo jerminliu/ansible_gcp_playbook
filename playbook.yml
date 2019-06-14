@@ -1,0 +1,14 @@
+---
+- name: Create instance
+  hosts: localhost
+  gather_facts: no
+  roles:
+   - create_instance
+- name: Manage new instance
+  hosts: new_instances
+  connection: ssh
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+   - run_instance
