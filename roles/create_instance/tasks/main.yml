@@ -35,7 +35,7 @@
 - name: create a instance
   gcp_compute_instance:
          state: present
-         name: vm-from-ansible
+         name: jenkins-master
          machine_type: g1-small
          disks:
            - auto_delete: true
