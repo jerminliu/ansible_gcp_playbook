@@ -1,6 +1,6 @@
 gcp_project: sharp-theory-241513
 gcp_cred_kind: serviceaccount
-gcp_cred_file: /mnt/c/ansible/google_cloud_roles/roles/create_instance/files/sharp-theory-241513-82c44676cb0d.json
+gcp_cred_file: /var/lib/jenkins/secrets/gcp_cred.json
 zone: "us-central1-a"
 region: "us-central1"
 rsa_pub_key: ubuntu:{{ lookup('file', '/home/ubuntu/.ssh/id_rsa.pub') }}
