@@ -1,6 +1,6 @@
 - name: create a disk
   gcp_compute_disk:
-         name: 'disk-instance'
+         name: 'jenkins-slave-disk'
          size_gb: 10
          source_image: 'projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20190514'
          zone: "{{ zone }}"
@@ -23,7 +23,7 @@
   register: network
 - name: create a address
   gcp_compute_address:
-         name: 'address-instance'
+         name: "jenlins-slave-address"
          region: "{{ region }}"
          project: "{{ gcp_project }}"
          auth_kind: "{{ gcp_cred_kind }}"
@@ -42,7 +42,7 @@
              boot: true
              source: "{{ disk }}"
          metadata:
-             ssh-keys: "{{ rsa_pub_key }}"
+             ssh-keys: "{{ ssh_pub_key }}"
          tags:
            items: http-server
          network_interfaces:
