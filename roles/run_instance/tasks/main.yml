@@ -1,17 +1,40 @@
-- name: Install nginx jenkins
-  script: script_bash.sh
+- name: Install nginx
+  apt:
+    name: nginx
+    update_cache: yes
+    state: latest
+
+- name: Install jdk
+  apt:
+    name: openjdk-8-jdk
+    update_cache: yes
+
+- name: Add jenkins key
+  shell: wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+- name: Add jenkins repo
+  shell: sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+- name: Install jenkins
+  apt: 
+   name: jenkins
+   update_cache: yes
+
 - name: Copy user and password for basic auth
   copy:
    src: .htpasswd
    dest: /etc/nginx/
+
 - name: Push nginx config
   template:
     src: nginx.j2
     dest: /etc/nginx/sites-enabled/default
+
 - name: Push Jenkins config
   template:
     src: jenkins.j2
     dest: /etc/default/jenkins
+
 - name: Restart nginx and jenkins
   service:
     name: "{{ item }}"
@@ -19,7 +42,3 @@
   with_items:
       - nginx
       - jenkins
-
-
-#- name: Restart nginx and jenkins
-#  command: service nginx restart || service jenkins restart
